@@ -1,0 +1,71 @@
+.fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legend {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  padding: 0 0 0.6rem;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+  background: var(--color-card);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.card:hover {
+  border-color: var(--color-magic);
+}
+
+.cardChecked {
+  border-color: var(--color-magic);
+  background: var(--color-magic-light);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.input:focus-visible + .label {
+  outline: 3px solid var(--color-magic);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--color-ink-light);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
